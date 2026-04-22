@@ -19,8 +19,7 @@ ops-agent-smb/
 ├── deliverables/          Client-facing materials (pitch, brief, slides, playbook)
 │   ├── brand/             TinKern Labs logo assets
 │   ├── client-brief/      Printable one-page engagement brief (React + TS + Vite)
-│   ├── slides-deck/       14-slide meeting deck (React + TS + Vite)   [in progress]
-│   ├── slides/            Original markdown slides                     [being replaced]
+│   ├── slides-deck/       15-slide meeting deck with presenter notes (React + TS + Vite)
 │   └── playbook/          Meeting checklist, pricing, negotiation, stack
 │
 ├── services/              [planned]  Backend services — webhook, AI agent, router

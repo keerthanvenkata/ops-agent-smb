@@ -1,0 +1,313 @@
+:root {
+  --ink: #0e1116;
+  --ink-2: #2b313a;
+  --muted: #5a6270;
+  --line: #d9dde3;
+  --line-soft: #ecf0f4;
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --accent: #0a5a3a;         /* deep green – TinKern mark */
+  --accent-soft: #e7f1ec;
+  --warn: #a8590c;
+  --warn-soft: #fdf2e3;
+  --pill: #0a5a3a;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  font-size: 10.5px;
+  line-height: 1.38;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* A4 portrait, ~794 x 1123 px at 96dpi. We pad page content. */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 14mm auto;
+  padding: 12mm 12mm 10mm 12mm;
+  background: var(--card);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.06);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ===== header ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+}
+.logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+}
+.brand-text { display: flex; flex-direction: column; }
+.brand-name {
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.2px;
+  color: var(--ink);
+}
+.brand-tag {
+  font-size: 9px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-top: 2px;
+}
+
+.meta { text-align: right; }
+.meta-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
+}
+.meta-sub {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 1px;
+}
+.meta-row {
+  display: flex;
+  gap: 14px;
+  justify-content: flex-end;
+  margin-top: 3px;
+  font-size: 9.5px;
+  color: var(--ink-2);
+}
+
+/* ===== typography ===== */
+.h2 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  color: var(--accent);
+  margin: 0 0 4px 0;
+  font-weight: 700;
+}
+p { margin: 0 0 4px 0; }
+.note {
+  font-size: 9.5px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.45;
+}
+.fine { font-size: 9px; color: var(--muted); }
+
+/* ===== intent ===== */
+.intent { padding: 4px 0; }
+.intent p { font-size: 10.5px; }
+
+/* ===== grid cards ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 10px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px 9px 10px;
+  background: #fff;
+}
+.card-title {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--accent);
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--line-soft);
+  padding-bottom: 3px;
+}
+
+ul.tight, ol.tight {
+  margin: 0;
+  padding-left: 16px;
+}
+ul.tight li, ol.tight li {
+  margin-bottom: 2.5px;
+  font-size: 10px;
+  line-height: 1.42;
+}
+
+/* ===== flow ===== */
+.flow {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: var(--accent-soft);
+}
+.flow-steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 4px;
+}
+.fstep {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 5px 8px;
+  font-size: 9.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.fstep .num {
+  background: var(--accent);
+  color: #fff;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.farr {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* ===== commercials ===== */
+.price-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 4px 0 4px 0;
+}
+.price-box {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 6px 8px;
+  background: #fff;
+}
+.price-box.recommended {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.plan {
+  font-size: 9.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--ink-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pill {
+  background: var(--pill);
+  color: #fff;
+  font-size: 7.5px;
+  padding: 2px 5px;
+  border-radius: 10px;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+}
+.amount {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 2px 0 0 0;
+  letter-spacing: -0.3px;
+}
+
+/* ===== impact ===== */
+.impact {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+.impact-cell {
+  background: #fff;
+  border-left: 3px solid var(--accent);
+  padding: 4px 8px;
+}
+.impact-num {
+  font-weight: 700;
+  font-size: 10.5px;
+  color: var(--ink);
+}
+.impact-text {
+  font-size: 9.5px;
+  color: var(--ink-2);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* ===== next + footer ===== */
+.next {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+.footer {
+  border-top: 2px solid var(--ink);
+  margin-top: auto;
+  padding-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 9.5px;
+  color: var(--ink-2);
+}
+
+/* ===== print ===== */
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+@media print {
+  html, body { background: #fff; }
+  .page {
+    margin: 0;
+    box-shadow: none;
+    border: none;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 10mm 10mm 8mm 10mm;
+  }
+  .card, .flow, .impact, .next, .price-box {
+    break-inside: avoid;
+  }
+}
